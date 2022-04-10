@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "newsapi": "apps/newsapi",
+    "newsapi-e2e": "apps/newsapi-e2e"
+  }
+}

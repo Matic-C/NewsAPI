@@ -1,0 +1,28 @@
+{
+  "root": "apps/newsapi-e2e",
+  "sourceRoot": "apps/newsapi-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/newsapi-e2e/cypress.json",
+        "devServerTarget": "newsapi:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "newsapi:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/newsapi-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["newsapi"]
+}

@@ -1,0 +1,44 @@
+<div class="header-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>NewsAPI</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-offset-2 col-md-4 header-forms">
+          <mat-form-field class="example-full-width header-input" appearance="fill">
+            <mat-label>Search for news</mat-label>
+            <input matInput placeholder="" (keydown.enter)="sendSearchIntoService(searchValue, null, null)"
+              [(ngModel)]="searchValue">
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4 header-forms">
+          <mat-form-field class="header-datepicker" appearance="fill">
+            <mat-label>DD/MM/YYYY – DD/MM/YYYY</mat-label>
+            <mat-date-range-input [disabled]="!searchValue" [rangePicker]="picker">
+              <input [(ngModel)]="startDate" matStartDate placeholder="Start date">
+              <input [(ngModel)]="endDate" matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <!--<mat-hint>DD/MM/YYYY – DD/MM/YYYY</mat-hint>-->
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 submit-btn">
+        <button (click)="sendSearchIntoService(searchValue, startDate, endDate)" matSuffix mat-icon-button
+          aria-label="Submit">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

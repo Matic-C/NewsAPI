@@ -6,15 +6,25 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/newsapi",
         "index": "apps/newsapi/src/index.html",
         "main": "apps/newsapi/src/main.ts",
         "polyfills": "apps/newsapi/src/polyfills.ts",
         "tsConfig": "apps/newsapi/tsconfig.app.json",
-        "assets": ["apps/newsapi/src/favicon.ico", "apps/newsapi/src/assets"],
-        "styles": ["apps/newsapi/src/styles.css"],
+        "assets": [
+          "apps/newsapi/src/favicon.ico",
+          "apps/newsapi/src/assets"
+        ],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "apps/newsapi/src/bootstrap-reboot.min.css",
+          "apps/newsapi/src/styles.css"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -79,7 +89,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/newsapi"],
+      "outputs": [
+        "coverage/apps/newsapi"
+      ],
       "options": {
         "jestConfig": "apps/newsapi/jest.config.js",
         "passWithNoTests": true

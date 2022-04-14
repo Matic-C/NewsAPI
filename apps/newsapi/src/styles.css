@@ -1,1 +1,148 @@
-/* You can add global styles to this file, and also import other style files */
+h1,
+h2,
+h3,
+h4,
+h5,
+body,
+a,
+p {
+    font-family: 'Roboto', serif;
+}
+
+.header-section {
+    padding: 3rem 0 3rem;
+    border-bottom: 1px dashed #e2e2e2;
+}
+
+.header-section h1 {
+    font-family: 'Oooh Baby', cursive;
+    max-width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 14rem;
+    margin: 50px;
+}
+
+.header-section .header-forms {
+    max-width: 100%;
+    display: block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+.header-section .header-forms:first-of-type {
+    text-align: right;
+}
+
+.header-section .header-forms:last-of-type {
+    text-align: left;
+}
+
+.submit-btn {
+    text-align: center;
+}
+
+.submit-btn button {
+    padding: 10px 20px;
+}
+
+.header-input {
+    width: 100%;
+}
+
+.header-datepicker {
+    width: 100%;
+}
+
+.filter {
+    padding-top: 2rem;
+    text-align: right;
+    font-size: 12px;
+}
+
+.filter-dropdown button
+{
+    margin-left: 20px;
+    padding-top: 5px;
+}
+
+.mat-select-panel {
+    max-height: 80vh !important;
+}
+
+.filter-select.mat-select-panel {
+    position: absolute;
+    left: -10px;
+    width: 200px;
+}
+
+.article-box {
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    margin-bottom: 2.5rem;
+    justify-content: flex-end;
+    flex-direction: column;
+    display: flex;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+}
+
+.article-content {
+    color: #fff;
+    font-size: 14px;
+}
+
+.article-box h2 a {
+    color: #fff;
+    font-size: 28px;
+    line-height: 28px;
+    margin-top: 0;
+    text-decoration: none;
+}
+
+.article-box a {
+    color: #fff;
+}
+
+.article-box img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.shadoweffect {
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    /* position: absolute; */
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 70%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000', GradientType=1);
+    filter: alpha(opacity=100);
+    opacity: 1;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+/* .article-box:hover, .article-box:focus {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+} */

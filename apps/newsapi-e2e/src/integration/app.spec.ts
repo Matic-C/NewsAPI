@@ -3,11 +3,12 @@ import { getGreeting } from '../support/app.po';
 describe('newsapi', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+  it('search for Austria in news', () => {
+    cy.get('.header-input input')
+      .should('be.visible')
+      .type('Austria{enter}')
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome newsapi');
+    cy.get('.article-title')
+      .should('include.text', 'Austria');
   });
 });

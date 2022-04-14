@@ -1,0 +1,46 @@
+<matic-header></matic-header>
+
+<section class="section">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-sm-offset-8 col-sm-4 filter">
+        <mat-form-field class="filter-dropdown" appearance="fill">
+          <mat-label>Filter by Author</mat-label>
+          <mat-select panelClass="filter-select" [(ngModel)]="selectedAuthor"
+            (selectionChange)="filterByAuthor($event)">
+            <div *ngFor="let source of news | filterUnique:'author' ">
+              <mat-option *ngIf="source.author" [value]="source.author">
+                {{ source.author }}
+              </mat-option>
+            </div>
+          </mat-select>
+          <button *ngIf="selectedAuthor" matSuffix mat-icon-button aria-label="Clear" (click)="selectedAuthor=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div *ngFor="let source of news">
+        <div *ngIf="(selectedAuthor)? (selectedAuthor == source.author): (!selectedAuthor)" class="col-sm-4">
+          <div
+            [ngStyle]="{'background-image': source.urlToImage? 'url(\''+source.urlToImage+'\')': 'url(assets/placeholder.jpg)'}"
+            class="article-box">
+            <div class="shadoweffect">
+              <div class="article-content">
+                <p>{{ source.publishedAt | formatDate }}</p>
+              </div>
+              <h2>
+                <a class="article-title" target="_blank" href="{{ source.url }}">{{ source.title }}</a>
+              </h2>
+              <a target="_blank" class="article-link" href="{{ source.url }}">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
